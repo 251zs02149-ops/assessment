@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>あなたの良いところ診断</title>
+  <!-- CSSのインポート -->
+  <link rel="stylesheet" href="assessment.css" >
+</head>
+<body>
+
+    <p>
+    背景を切り替える
+    <input type="button" value="緑" onclick="changePageBgColor('#3CB371'); changeButtonColor('#2E8B57');">
+    <input type="button" value="紫" onclick="changePageBgColor('#6A5ACD'); changeButtonColor('#483D8B');">
+    <input type="button" value="黄" onclick="changePageBgColor('#F0E68C'); changeButtonColor('#BDB76B');">
+    <input type="button" value="赤" onclick="changePageBgColor('#CD5C5C'); changeButtonColor('#B22222');">
+    <input type="button" value="戻す" onclick="changePageBgColor('#0ebff1'); changeButtonColor('#337ab7');">
+  </p>
+
+  <h1>あなたの良いところは？</h1>
+  <p>診断する名前を入れて下さい</p>
+
+  <!-- 入力画面：テキスト形式, 枠のサイズ, 文字数制限(全角は無効) -->
+  <input type="text" id="user-name" size="40" maxlength="20">
+  <!-- ボタン -->
+  <button id="assessment"> 診断する! </button>
+
+  <!-- divタグは分割(空箱を用意するイメージ?) この中にassessmentメソッドが入る -->
+    <div id="result-area"></div>
+
+    <!-- ツイートボタンの埋め込み-->
+    <div id="tweet-area">
+      <a href="https://twitter.com/intent/tweet?button_hashtag=あなたのいいところ&ref_src=twsrc%5Etfw" 
+      class="twitter-hashtag-button" 
+      data-text="診断結果の文章" 
+      data-show-count="false">Tweet #あなたのいいところ</a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+
+  <!-- JS呼び出し -->
+  <script src="assessment.js"></script>
+  
+</body>
+</html>
